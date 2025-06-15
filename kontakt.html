@@ -2,34 +2,97 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kontakt - Prosty Urzędnik</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt – Prosty Urzędnik</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #ffffff;
+      color: #1f2937;
       line-height: 1.6;
-      padding: 2rem;
-      background-color: #f9f9f9;
-      color: #1f2937;
+    }
+    header {
+      background-color: #4a90e2;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    .container {
       max-width: 800px;
-      margin: auto;
+      margin: 2rem auto;
+      padding: 1rem;
     }
-    h1 {
-      color: #1f2937;
-      font-size: 2rem;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
-    a {
+    input, textarea {
+      padding: 0.8rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #4a90e2;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      align-self: flex-start;
+    }
+    .info {
+      margin-top: 2rem;
+    }
+    .info p {
+      margin: 0.3rem 0;
+    }
+    footer {
+      margin-top: 4rem;
+      padding: 1rem;
+      background-color: #f3f4f6;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    footer a {
       color: #4a90e2;
+      margin: 0 0.5rem;
       text-decoration: none;
     }
   </style>
 </head>
 <body>
+
+<header>
   <h1>Kontakt</h1>
-  <p>Masz pytania? Skontaktuj się z nami:</p>
-  <p><strong>Telefon:</strong> <a href="tel:+48501650232">+48 501 650 232</a></p>
-  <p><strong>E-mail:</strong> <span style="color:#999;">(adres firmowy wkrótce)</span></p>
-  <p>Odpowiadamy zazwyczaj w ciągu 24 godzin w dni robocze.</p>
-  <p><a href="index.html">← Powrót do strony głównej</a></p>
+  <p>Masz pytania? Skontaktuj się z nami</p>
+</header>
+
+<div class="container">
+  <form action="mailto:kontakt@prostyurzednik.pl" method="post" enctype="text/plain">
+    <input type="text" name="Imię i nazwisko" placeholder="Twoje imię i nazwisko" required>
+    <input type="email" name="Email" placeholder="Twój adres e-mail" required>
+    <textarea name="Wiadomość" rows="6" placeholder="Wiadomość..." required></textarea>
+    <button type="submit">Wyślij wiadomość</button>
+  </form>
+
+  <div class="info">
+    <h3>Dane kontaktowe</h3>
+    <p><strong>Telefon:</strong> 501 650 232</p>
+    <p><strong>E-mail:</strong> kontakt@prostyurzednik.pl</p>
+  </div>
+</div>
+
+<footer>
+  <p>
+    <a href="index.html">Strona główna</a> |
+    <a href="regulamin.html">Regulamin</a>
+  </p>
+  <p>© 2025 Prosty Urzędnik</p>
+</footer>
+
 </body>
 </html>
