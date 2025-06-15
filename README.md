@@ -1,1 +1,1 @@
-# prosty-urz-dnik
+# prosty-urzednik
