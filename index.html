@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prosty Urzędnik</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
   <style>
     :root {
       --bg: #ffffff;
@@ -22,7 +22,7 @@
     header {
       background-color: var(--accent);
       color: white;
-      padding: 3rem 1rem;
+      padding: 3rem 1rem 2rem;
       text-align: center;
     }
     header h1 {
@@ -64,9 +64,44 @@
     .card {
       border: 1px solid #ddd;
       border-radius: 8px;
-      padding: 1rem;
+      padding: 1.2rem 1rem;
       flex: 1 1 200px;
       text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      background-color: #fff;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+    .card-price {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+    .card-description {
+      opacity: 0;
+      font-size: 0.9rem;
+      color: #555;
+      transition: opacity 0.3s ease;
+      margin-top: 0.5rem;
+    }
+    .card:hover .card-description {
+      opacity: 1;
+    }
+    .free {
+      background-color: #f3f4f6;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 2rem;
+      border-radius: 8px;
     }
     footer {
       margin-top: 4rem;
@@ -81,30 +116,6 @@
       text-decoration: none;
     }
   </style>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXX-X"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-XXXXXXX-X');
-  </script>
-
-  <!-- Meta Pixel -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'YOUR_PIXEL_ID'); 
-    fbq('track', 'PageView');
-  </script>
-
 </head>
 <body>
 
@@ -122,21 +133,29 @@
   <p>
     Wypełnij kilka pól, a otrzymasz gotowy PDF na e-mail w mniej niż 5 minut. Bez pobierania aplikacji, bez komplikacji.
   </p>
+
+  <div class="free">
+    <strong>Pierwsze pismo jest całkowicie darmowe!</strong>
+  </div>
+
   <a href="https://tally.so/r/wbEjre" class="button">Wypełnij formularz</a>
 
   <h3>Dostępne pakiety:</h3>
   <div class="pricing">
     <div class="card">
-      <strong>9 zł</strong><br />
-      1 pismo jednorazowe
+      <div class="card-price">9 zł</div>
+      <div class="card-title">Jednorazowy</div>
+      <p class="card-description">Doskonały wybór, jeśli potrzebujesz tylko jednego pisma.</p>
     </div>
     <div class="card">
-      <strong>29 zł</strong><br />
-      Dostęp miesięczny
+      <div class="card-price">29 zł</div>
+      <div class="card-title">Miesięczny</div>
+      <p class="card-description">Pełen dostęp do generatora przez 30 dni — bez limitu.</p>
     </div>
     <div class="card">
-      <strong>50 zł</strong><br />
-      Dostęp pełny (pakiet specjalny)
+      <div class="card-price">50 zł</div>
+      <div class="card-title">Pełny dostęp</div>
+      <p class="card-description">Najlepsza opcja dla osób regularnie załatwiających sprawy.</p>
     </div>
   </div>
 
@@ -150,7 +169,7 @@
   <h3>Co mówią użytkownicy?</h3>
   <p>⭐⭐⭐⭐⭐ 4.9/5 z ponad 200 opinii</p>
 
-  <a href="https://g.page/r/CiebieTuJeszczeNieMa" target="_blank" class="button">Oceń nas</a>
+  <a href="https://g.page/r/CiebieTuJeszczeNieMa/review" target="_blank" class="button">Oceń nas</a>
 </div>
 
 <footer>
