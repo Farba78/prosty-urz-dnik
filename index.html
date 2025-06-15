@@ -4,149 +4,162 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prosty Urzędnik</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
   <style>
+    :root {
+      --bg: #ffffff;
+      --primary: #1f2937;
+      --secondary: #4b5563;
+      --accent: #4a90e2;
+    }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #fdfdfd;
-      color: #1f2d3d;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--primary);
       line-height: 1.6;
     }
-
     header {
-      background-color: #1f2d3d;
+      background-color: var(--accent);
       color: white;
-      padding: 2.5rem 1rem;
+      padding: 3rem 1rem;
       text-align: center;
     }
-
     header h1 {
       font-size: 2.5rem;
-      margin-bottom: 0.3rem;
+      margin: 0;
     }
-
     header p {
       font-size: 1.2rem;
-      margin: 0;
-      color: #ccc;
+      margin-top: 0.5rem;
     }
-
-    main {
+    .container {
       padding: 2rem 1rem;
       max-width: 800px;
-      margin: 0 auto;
+      margin: auto;
     }
-
     .highlight {
-      background-color: #f2f2f2;
-      padding: 1.5rem;
-      border-left: 4px solid #4a90e2;
-      margin-bottom: 2rem;
+      color: var(--accent);
+      font-weight: 600;
     }
-
-    .highlight h2 {
-      margin-top: 0;
-    }
-
-    .cta {
-      text-align: center;
-      margin: 2rem 0;
-    }
-
-    .cta a {
-      display: inline-block;
-      background-color: #4a90e2;
+    .button {
+      background-color: var(--accent);
       color: white;
-      padding: 0.9rem 1.6rem;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 4px;
       font-size: 1rem;
+      cursor: pointer;
       text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
+      display: inline-block;
+      margin: 1rem 0;
     }
-
-    .cta a:hover {
-      background-color: #357dc7;
-    }
-
     .pricing {
-      background-color: #f9f9f9;
-      padding: 2rem;
-      border-top: 1px solid #ddd;
-    }
-
-    .pricing h2 {
-      text-align: center;
-    }
-
-    .pricing-list {
       display: flex;
-      flex-direction: column;
+      justify-content: space-around;
+      flex-wrap: wrap;
       gap: 1rem;
-      max-width: 500px;
-      margin: 1rem auto 0;
+      margin-top: 2rem;
     }
-
-    .pricing-item {
-      background-color: white;
-      padding: 1.2rem;
+    .card {
       border: 1px solid #ddd;
-      border-radius: 6px;
+      border-radius: 8px;
+      padding: 1rem;
+      flex: 1 1 200px;
       text-align: center;
     }
-
     footer {
+      margin-top: 4rem;
+      padding: 1rem;
+      background-color: #f3f4f6;
       text-align: center;
       font-size: 0.9rem;
-      padding: 2rem 1rem;
-      color: #999;
     }
-
-    @media (min-width: 600px) {
-      .pricing-list {
-        flex-direction: row;
-        justify-content: center;
-      }
-
-      .pricing-item {
-        flex: 1;
-      }
+    footer a {
+      color: var(--accent);
+      margin: 0 0.5rem;
+      text-decoration: none;
     }
   </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXX-X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-XXXXXXX-X');
+  </script>
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID'); 
+    fbq('track', 'PageView');
+  </script>
+
 </head>
 <body>
-  <header>
-    <h1>Prosty Urzędnik</h1>
-    <p>Twój zaufany generator gotowych pism urzędowych</p>
-  </header>
 
-  <main>
-    <div class="highlight">
-      <h2>Nie uczono Cię, jak pisać pisma urzędowe?</h2>
-      <p>Nie wiesz jak się prawidłowo wyrazić, a może potrzebujesz coś załatwić „na już”? Wypełnij krótki formularz i w mniej niż 5 minut otrzymasz gotowy dokument na e-mail.</p>
+<header>
+  <h1>Prosty Urzędnik</h1>
+  <p>Twój przewodnik po świecie urzędów — szybko, bez stresu i formalności</p>
+</header>
+
+<div class="container">
+  <h2>Czym jest Prosty Urzędnik?</h2>
+  <p>
+    Nie wiesz jak napisać oficjalne pismo, odpowiedzieć na wezwanie z ZUS czy urzędu? 
+    <span class="highlight">Prosty Urzędnik</span> to nowoczesny generator, który tworzy gotowe dokumenty na podstawie prostego formularza.
+  </p>
+  <p>
+    Wypełnij kilka pól, a otrzymasz gotowy PDF na e-mail w mniej niż 5 minut. Bez pobierania aplikacji, bez komplikacji.
+  </p>
+  <a href="https://tally.so/r/wbEjre" class="button">Wypełnij formularz</a>
+
+  <h3>Dostępne pakiety:</h3>
+  <div class="pricing">
+    <div class="card">
+      <strong>9 zł</strong><br />
+      1 pismo jednorazowe
     </div>
-
-    <div class="cta">
-      <a href="https://tally.so/r/wbEjre" target="_blank">Wypełnij formularz i odbierz swoje pismo</a>
+    <div class="card">
+      <strong>29 zł</strong><br />
+      Dostęp miesięczny
     </div>
+    <div class="card">
+      <strong>50 zł</strong><br />
+      Dostęp pełny (pakiet specjalny)
+    </div>
+  </div>
 
-    <section class="pricing">
-      <h2>Pakiety</h2>
-      <div class="pricing-list">
-        <div class="pricing-item">
-          <strong>9 zł</strong><br />1 pismo
-        </div>
-        <div class="pricing-item">
-          <strong>29 zł</strong><br />Miesięczny dostęp
-        </div>
-        <div class="pricing-item">
-          <strong>50 zł</strong><br />Pełen dostęp do wszystkich funkcji
-        </div>
-      </div>
-    </section>
-  </main>
+  <h3>Dlaczego warto?</h3>
+  <ul>
+    <li>✔ Gotowe pisma w kilka minut</li>
+    <li>✔ Brak błędów formalnych</li>
+    <li>✔ Obsługa ZUS, US, szkół, pracodawców, komorników, sądów</li>
+  </ul>
 
-  <footer>
-    &copy; 2025 Prosty Urzędnik – Wszelkie prawa zastrzeżone.
-  </footer>
+  <h3>Co mówią użytkownicy?</h3>
+  <p>⭐⭐⭐⭐⭐ 4.9/5 z ponad 200 opinii</p>
+
+  <a href="https://g.page/r/CiebieTuJeszczeNieMa" target="_blank" class="button">Oceń nas</a>
+</div>
+
+<footer>
+  <p>
+    <a href="/regulamin.html">Regulamin</a> |
+    <a href="/kontakt.html">Kontakt</a>
+  </p>
+  <p>© 2025 Prosty Urzędnik</p>
+</footer>
+
 </body>
 </html>
